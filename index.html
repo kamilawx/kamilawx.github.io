@@ -202,11 +202,6 @@
         background: #e9ece5;
       }
 
-      .arrow {
-        font-size: 16px;
-        line-height: 1;
-      }
-
       .hero-visual {
         position: relative;
         min-height: 490px;
@@ -218,7 +213,7 @@
         overflow: hidden;
         border-radius: 48% 48% 6px 6px;
         background-color: #d5d9cd;
-        background-image: linear-gradient(180deg, transparent 62%, rgb(28 43 33 / 17%)), url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=85");
+        background-image: linear-gradient(180deg, transparent 62%, rgb(28 43 33 / 17%)), url("assets/img/yoga-matterhorn-2.jpg");
         background-position: center;
         background-size: cover;
       }
@@ -236,23 +231,10 @@
         line-height: 1.35;
       }
 
-      .hero-note {
-        position: absolute;
-        top: 41px;
-        right: -17px;
-        width: 92px;
-        height: 92px;
-        display: grid;
-        place-items: center;
-        border: 1px solid #b5c0b1;
-        border-radius: 50%;
-        background: var(--paper);
-        color: var(--green);
-        font-family: var(--serif);
-        font-size: 13px;
-        line-height: 1.25;
-        text-align: center;
-        transform: rotate(9deg);
+      .instagram-icon {
+        width: 16px;
+        height: 16px;
+        flex: 0 0 auto;
       }
 
       .section {
@@ -401,6 +383,12 @@
         gap: 22px;
       }
 
+      .footer-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
       .footer-links a:hover {
         color: var(--green);
       }
@@ -449,10 +437,6 @@
 
         .hero-image {
           right: 17px;
-        }
-
-        .hero-note {
-          right: -5px;
         }
 
         .section,
@@ -515,7 +499,7 @@
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#training">Training</a>
-        <a class="nav-contact" href="mailto:your.email@example.com">Say hello <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact" href="mailto:your.email@example.com">Say hello</a>
       </nav>
     </header>
 
@@ -530,17 +514,21 @@
           </p>
           <div class="button-row">
             <a class="button button-primary" href="mailto:your.email@example.com">
-              Get in touch <span class="arrow" aria-hidden="true">↗</span>
+              Get in touch
             </a>
             <a class="button button-secondary" href="https://www.instagram.com/yourhandle/" target="_blank" rel="noreferrer">
-              Instagram <span class="arrow" aria-hidden="true">↗</span>
+              <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"></circle>
+              </svg>
+              Instagram
             </a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Yoga practice in a calm, sunlit space">
+        <div class="hero-visual" role="img" aria-label="Yoga pose beneath the Matterhorn">
           <div class="hero-image"></div>
           <div class="image-caption">Come as you are.<br>Begin from here.</div>
-          <div class="hero-note" aria-hidden="true">Move<br>with care</div>
         </div>
       </section>
 
@@ -616,10 +604,15 @@
           </p>
           <div class="button-row">
             <a class="button button-primary" href="mailto:your.email@example.com">
-              Email me <span class="arrow" aria-hidden="true">↗</span>
+              Email me
             </a>
             <a class="button button-secondary" href="https://www.instagram.com/yourhandle/" target="_blank" rel="noreferrer">
-              Follow on Instagram <span class="arrow" aria-hidden="true">↗</span>
+              <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"></circle>
+              </svg>
+              Follow on Instagram
             </a>
           </div>
         </div>
@@ -630,7 +623,14 @@
       <span>© <span id="year">2026</span> Kamila Waksmundzka</span>
       <div class="footer-links">
         <a href="#top">Back to top ↑</a>
-        <a href="https://www.instagram.com/yourhandle/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="https://www.instagram.com/yourhandle/" target="_blank" rel="noreferrer">
+          <svg class="instagram-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
       </div>
     </footer>
   </body>
