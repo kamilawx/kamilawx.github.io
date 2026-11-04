@@ -204,14 +204,14 @@
 
       .hero-visual {
         position: relative;
-        min-height: 490px;
+        min-height: 560px;
       }
 
       .hero-image {
         position: absolute;
-        inset: 0 25px 22px 0;
+        inset: 0;
         overflow: hidden;
-        border-radius: 48% 48% 6px 6px;
+        border-radius: 4px;
         background-color: #d5d9cd;
         background-image: linear-gradient(180deg, transparent 62%, rgb(28 43 33 / 17%)), url("assets/img/yoga-matterhorn-2.jpg");
         background-position: center;
@@ -276,6 +276,59 @@
 
       .about-copy p:last-child {
         margin-bottom: 0;
+      }
+
+      .gallery-section {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .gallery-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 35px;
+      }
+
+      .gallery-heading h2 {
+        max-width: 500px;
+      }
+
+      .gallery-intro {
+        max-width: 340px;
+        margin: 0 0 5px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1020px;
+        gap: 24px;
+        margin: 0 auto;
+      }
+
+      .gallery-card {
+        margin: 0;
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 360px;
+        display: block;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      .gallery-card:first-child img {
+        object-position: 68% center;
+      }
+
+      .gallery-card:nth-child(2) img {
+        object-position: center bottom;
       }
 
       .training-section {
@@ -432,11 +485,7 @@
         }
 
         .hero-visual {
-          min-height: min(112vw, 490px);
-        }
-
-        .hero-image {
-          right: 17px;
+          min-height: min(125vw, 560px);
         }
 
         .section,
@@ -447,6 +496,21 @@
         .about-grid {
           grid-template-columns: 1fr;
           gap: 28px;
+        }
+
+        .gallery-heading {
+          align-items: start;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .gallery-card img {
+          height: 280px;
         }
 
         .training-heading {
@@ -549,6 +613,46 @@
               little of that journey. Whether you’re brand new or finding your
               way back, you’re welcome here.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" aria-labelledby="gallery-title">
+        <div class="shell">
+          <div class="gallery-heading">
+            <div>
+              <p class="section-label">Beyond the mat</p>
+              <h2 id="gallery-title">A few moments from my practice.</h2>
+            </div>
+            <p class="gallery-intro">
+              A glimpse of the places and moments that make space for movement.
+            </p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-card">
+              <img
+                src="assets/img/yoga-matterhorn-1.jpg"
+                alt="Kamila practicing yoga beneath the Matterhorn"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="gallery-card">
+              <img
+                src="assets/img/jb_yestem_retreat-188.JPEG"
+                alt="A supported inversion practice in a warm, sunlit room"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="gallery-card">
+              <img
+                src="assets/img/3e7b8db4-fba7-452d-807b-ca86b39afdab.JPG"
+                alt="Yoga mats and props arranged in a bright studio"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
           </div>
         </div>
       </section>
