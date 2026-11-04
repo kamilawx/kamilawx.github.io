@@ -104,12 +104,20 @@
       }
 
       .hero {
-        min-height: 640px;
-        display: grid;
-        grid-template-columns: 0.95fr 1.05fr;
+        position: relative;
+        width: calc(100% - 16px);
+        aspect-ratio: 4 / 3;
+        display: flex;
         align-items: center;
-        gap: 8%;
-        padding: 64px 0 76px;
+        overflow: hidden;
+        margin: 8px auto;
+        padding: 80px max(24px, calc((100vw - 1160px) / 2));
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 700px);
       }
 
       .eyebrow {
@@ -117,7 +125,7 @@
         align-items: center;
         gap: 11px;
         margin: 0 0 25px;
-        color: var(--green);
+        color: #e4e9df;
         font-size: 11px;
         font-weight: 700;
         letter-spacing: 0.18em;
@@ -139,26 +147,46 @@
       }
 
       h1 {
-        max-width: 550px;
+        max-width: 700px;
         margin-bottom: 23px;
         font-family: var(--serif);
-        font-size: clamp(56px, 7.3vw, 94px);
+        font-size: clamp(58px, 8vw, 104px);
         font-weight: 500;
         letter-spacing: -0.055em;
         line-height: 0.99;
+        color: white;
       }
 
       h1 em {
-        color: var(--green);
+        color: #dce7d8;
         font-weight: 500;
       }
 
       .hero-copy {
-        max-width: 415px;
+        max-width: 500px;
         margin-bottom: 30px;
-        color: var(--muted);
-        font-size: 15px;
+        color: rgb(255 255 255 / 88%);
+        font-size: 16px;
         line-height: 1.85;
+      }
+
+      .hero .button-primary {
+        border-color: white;
+        background: white;
+        color: var(--green-dark);
+      }
+
+      .hero .button-primary:hover {
+        background: #e9eee6;
+      }
+
+      .hero .button-secondary {
+        border-color: rgb(255 255 255 / 78%);
+        color: white;
+      }
+
+      .hero .button-secondary:hover {
+        background: rgb(255 255 255 / 14%);
       }
 
       .button-row {
@@ -202,20 +230,16 @@
         background: #e9ece5;
       }
 
-      .hero-visual {
-        position: relative;
-        min-height: 560px;
-      }
-
       .hero-image {
         position: absolute;
         inset: 0;
-        overflow: hidden;
-        border-radius: 4px;
-        background-color: #d5d9cd;
-        background-image: linear-gradient(180deg, transparent 62%, rgb(28 43 33 / 17%)), url("assets/img/yoga-matterhorn-2.jpg");
-        background-position: center;
-        background-size: cover;
+        background-image:
+          linear-gradient(90deg, rgb(20 30 25 / 82%) 0%, rgb(20 30 25 / 64%) 42%, rgb(20 30 25 / 18%) 100%),
+          linear-gradient(0deg, rgb(20 30 25 / 24%), transparent 55%),
+          url("assets/img/yoga-matterhorn-2.jpg");
+        background-position: center, center, center top;
+        background-repeat: no-repeat;
+        background-size: cover, cover, 100% calc(100% + 150px);
       }
 
       .instagram-icon {
@@ -462,18 +486,37 @@
         }
 
         .hero {
-          min-height: 0;
-          grid-template-columns: 1fr;
-          gap: 42px;
-          padding: 69px 0 74px;
+          min-height: 232px;
+          padding: 14px 20px;
         }
 
         h1 {
-          font-size: clamp(58px, 14vw, 82px);
+          margin-bottom: 12px;
+          font-size: clamp(32px, 9vw, 40px);
         }
 
-        .hero-visual {
-          min-height: min(125vw, 560px);
+        .hero .eyebrow {
+          margin-bottom: 12px;
+        }
+
+        .hero-copy {
+          margin-bottom: 14px;
+          font-size: 13px;
+          line-height: 1.35;
+        }
+
+        .hero .button {
+          min-height: 42px;
+          padding: 0 15px;
+        }
+
+        .hero-image {
+          background-image:
+            linear-gradient(90deg, rgb(20 30 25 / 76%), rgb(20 30 25 / 44%)),
+            linear-gradient(0deg, rgb(20 30 25 / 24%), transparent 60%),
+            url("assets/img/yoga-matterhorn-2.jpg");
+          background-position: center, center, center top;
+          background-size: cover, cover, 100% calc(100% + 150px);
         }
 
         .section,
@@ -551,7 +594,8 @@
     </header>
 
     <main id="top">
-      <section class="shell hero" aria-labelledby="hero-title">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-image" role="img" aria-label="Yoga practice beneath the Matterhorn"></div>
         <div class="hero-content">
           <p class="eyebrow">A practice for every body</p>
           <h1 id="hero-title">Find your way <em>back to you.</em></h1>
@@ -572,9 +616,6 @@
               Instagram
             </a>
           </div>
-        </div>
-        <div class="hero-visual" role="img" aria-label="Yoga pose beneath the Matterhorn">
-          <div class="hero-image"></div>
         </div>
       </section>
 
